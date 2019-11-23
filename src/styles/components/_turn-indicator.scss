@@ -26,6 +26,21 @@
   @media screen and (min-width:960px) {
    font-size:4em;
   }
+
+  // Estilos para input de "code word"
+  input[type=text] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid grey;
+    color: white;
+
+    &:focus {
+      border-bottom: 2px solid red;
+    }
+    &:disabled {
+      color: grey;
+    }
+  }
 }
 
 .turn-indicator__placeholder {

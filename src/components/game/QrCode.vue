@@ -5,14 +5,14 @@
         <div class="game-code__title">{{t('Room Code:')}}</div>
         <div class="game-code__code">{{room}}</div>
         <p class="game-code__text">{{t('Your game is ready. Please ask the codemasters to scan the QRcode to access their data.')}}</p>
-        <p class="game-code__text">{{t('They can also join using the url')}} <a class="game-code__link" href="http://codewords.ludoratory.com/join">codewords.ludoratory.com/join</a> {{t('and entering the room code.')}}</p>
+        <p class="game-code__text">{{t('They can also join using the url')}} <a class="game-code__link" href="http://localhost:8080/join">http://localhost:8080/join</a> {{t('and entering the room code.')}}</p>
         <button class="game-code__button" @click="closeCode()">{{t('play game')}}</button>
         <div class="game-code__starting" v-if="turn==='blue'">{{t('Blue team will start this game')}}</div>
         <div class="game-code__starting" v-if="turn==='red'">{{t('Red team will start this game')}}</div>
       </div>
       <div class="game-code__qr">
         <qrcode :options="{size:1000, background:'#f4f4f8', foreground:'#091619'}"
-                  :value="'http://codewords.ludoratory.com/game/'+room+'/codemaster/'">
+                  :value="' http://192.168.0.124:8080/game/'+room+'/codemaster/'">
         </qrcode>
       </div>
     </div>

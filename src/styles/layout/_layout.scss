@@ -1,45 +1,45 @@
 .base {
-  height:100vh;
-  height: calc(var(--vh, 1vh) * 100);
-  width:100vw;
-  overflow:hidden;
-  font-family: 'Montserrat', sans-serif;
-  padding:1em;
-  color:$white;
-  @include responsive-font(1.2vw, 16px, 24px, 16px);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  @media screen and (min-width:960px) {
-    padding:3.375em;
-  }
+    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    padding: 1em;
+    color: $white;
+    @include responsive-font(1.2vw, 16px, 24px, 16px);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @media screen and (min-width: 960px) {
+        padding: 3.375em;
+    }
 }
 
 .wrapper {
-  height:100%;
-  position:relative;
+    height: 100%;
+    position: relative;
 }
 
 .header {
-  position:absolute;
-  top:0;
-  height:16.66%;
-  width:100%;
+    position: absolute;
+    top: 0;
+    height: 16.66%;
+    width: 100%;
 }
 
 .main {
-  position: absolute;
-  top:16.66%;
-  height:75%;
-  width:100%;
-  display:flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    top: 16.66%;
+    height: 75%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer {
-  position:absolute;
-  top: 91.66%;
-  width:100%;
-  height:8.33%;
+    position: absolute;
+    top: 91.66%;
+    width: 100%;
+    height: 8.33%;
 }

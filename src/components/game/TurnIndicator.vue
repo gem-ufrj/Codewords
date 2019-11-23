@@ -7,8 +7,9 @@
       <template v-if="turn.allegiance==='red' && turn.role==='codebreaker'">{{t("red codebreaker's turn")}}</template>
     </div>
     <div class="turn-indicator__code" v-if="turn.role === player.role">
-      <span class="turn-indicator__placeholder" v-if="code.word.length==0">{{t('Type your codeword')}}</span>
-      <span v-else>{{code.word}}</span>
+      <span>
+        <input type="text" v-model="code.word" @input="updateWord()" :disabled="code.select!=='word'" autofocus="true" :placeholder="t('Type your codeword')">
+      </span>
       <span v-if="turn.role==='codebreaker' || code.select!=='word'">
         {{code.count}}
       </span>
@@ -21,11 +22,23 @@
 </template>
 
 <script>
+import {eventBus} from '../../main';  
 export default {
   props: {
     player: Object,
     turn: Object,
     code: Object
+  },
+  methods: {
+    updateWord() {
+      const self = this;
+      self.vibrate(20);
+      eventBus.$emit('codeChanged',{
+        word: self.code.word,
+        select: self.code.select,
+        count: self.code.count
+      });
+    }
   },
   locales: {
     pt_br: {
